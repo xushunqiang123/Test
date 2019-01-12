@@ -1,0 +1,19 @@
+#-*-coding:utf-8 -*-
+__author__ = 'XuShunQiang'
+
+
+
+def repacefa(path):
+    lis =[]
+    for i in path:
+        lis.append(i)
+    for j in range(lis.__len__()):
+        if lis[j] =="\\":
+            lis[j] = "/"
+    path = "".join(lis)
+    return path
+
+
+def relacenet(path):
+    path = path.replace("\\",'/')
+    return path
