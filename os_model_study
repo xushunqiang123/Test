@@ -1,0 +1,64 @@
+#-*-coding:utf-8 -*-
+__author__ = 'XuShunQiang'
+
+#  os 模块包学习
+import os
+
+# #1:os.getcwd()
+my_dir = os.getcwd()
+print(my_dir)
+
+ #  D:\G\2018-11-29\TuLingLianXi
+
+
+# #2:chdir
+os.chdir("D:/G/2018-11-29")
+os.chdir(u"D:\F：\仿真技术/1：天津商业大学/建筑/revite设计/2：娱乐KTV/!!!!!娱乐场所规划out_ficial/优哥发的")
+my_dir = os.getcwd()
+print(my_dir)
+
+#3:listdir
+ld = os.listdir()
+print(ld)
+
+#4:makedirs() 创建一个文件夹
+try:
+    rst = os.mkdir("xushun")
+    print(rst)
+except:
+    print("该文件已经被创建啦啊！！1")
+mydir = os.getcwd()
+print(mydir)
+
+#5:systerm() 执行系统命令
+rst = os.system("ls")
+# mydir = os.getcwd()
+# print(mydir)
+print(rst)
+
+
+
+
+#6:getenv() 获取指定的系统环境变量值
+rst = os.getenv("path")
+print(rst)
+
+
+
+#7:exit() 退出当前程序
+
+
+
+#相关值
+print(os.curdir)
+print(os.pardir)
+
+print(os.sep)
+    #windows:"\"
+    ##unix,linux,mcos:"/"
+print(os.linesep)
+    #windows: "\r\n"
+    #unix,linux,mcos:"\n"
+print(os.name)
+    #windows: nt
+    #unix,linux,mcos: posix
