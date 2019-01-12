@@ -1,0 +1,40 @@
+#-*-coding:utf-8 -*-
+__author__ = 'XuShunQiang'
+import shutil
+
+
+#1:copy() 拷贝文件到另一个目录下，拷贝的同时候可以对此重命名
+
+path = r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt"
+rs = shutil.copy(path,r"D:\G\2018-11-29\TuLingLianXi\xushun\b.txt")
+print(rs)
+
+
+
+#2:copy2() 拷贝文件到另一个目录下，拷贝的同时候可以对此重命名,保留源文件的元数据
+
+
+
+#3：copyfile()
+path = r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt"
+rst = shutil.copyfile(r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt",r"D:\G\2018-11-29\TuLingLianXi\xushun\b.txt")
+print(rst)
+
+
+
+#4：move()
+path = r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt"
+rst = shutil.move(r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt",r"D:\G\2018-11-29\TuLingLianXi")
+print(rst)
+
+
+
+#归档跟压缩
+
+#归档 make_archive()归档操作
+
+path = r"D:\G\2018-11-29\TuLingLianXi\xushun\a.txt"
+
+re = shutil.make_archive(r"D:\G\2018-11-29\TuLingLianXi\xushun\123","zip",r"D:\G\2018-11-29\TuLingLianXi\xushun")
+
+#反归档 unpack_archive()捷豹操作
