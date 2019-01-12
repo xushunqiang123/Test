@@ -1,0 +1,51 @@
+#-*-coding:utf-8 -*-
+__author__ = 'XuShunQiang'
+from ti_huan_fan_xie_gang import *
+import os.path as op
+import os
+
+#1:abspath()
+# abspa = op.abspath(".")
+# print(abspa)
+
+#2:basename()
+path = r"D:\G\2018-11-29\TuLingLianXi\aa.txt"
+lis =[]
+for i in path:
+    lis.append(i)
+for j in range(lis.__len__()):
+    if lis[j] =="\\":
+        lis[j] = "/"
+path = "".join(lis)
+print(path)
+
+path = path.replace("\\",'/')
+print(path)
+
+
+bn = op.basename(path)
+print(bn)
+
+
+
+#3:join() 将多个路径拼合成一个路径
+
+ad = "D:\G\2018-11-29"
+fn = "xu.txt"
+path = op.join(ad,fn)
+print(path)
+
+
+#4:solit() 将多个路径拼合成一个路径
+
+ad = r"D:\G\2018-11-29\xu.txt"
+ad = repacefa(ad)
+print(ad)
+t = op.split(ad)
+print(t)
+
+#5:isdir() 文件或者目录存在吗？
+
+ad = r"D:\G\2018-11-29\static"
+res = op.isdir(ad)
+print(res)
