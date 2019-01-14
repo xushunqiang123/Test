@@ -1,0 +1,11 @@
+import zipfile
+
+# help(zipfile.ZipFile)
+rst = zipfile.ZipFile(r"D:\G\2018-11-29\TuLingLianXi\xushun\xushun.zip")
+print(rst)
+a = rst.getinfo("a.txt")
+print(a)
+ls = rst.namelist()
+print(ls)
+ss = rst.extractall(r"D:\G\2018-11-29\TuLingLianXi\xushun\qq")
+print(ss)
