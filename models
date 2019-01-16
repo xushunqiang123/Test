@@ -1,0 +1,50 @@
+# -*- coding: UTF-8 -*-
+from exst import db
+
+#1：原始类
+ class Author(db.Model):
+    __tablename__ = "author"
+    id = db.Column(db.Integer,primary_key= True)
+    name = db.Column(db.String(20),unique= True,index=True)
+    phone = db.Column(db.String(50))
+
+
+# class Article(db.Model):
+    __tablename__ = "article"
+    id = db.Column(db.Integer,primary_key = True)
+    title = db.Column(db.String(20))
+    body = db.Column(db.Text)
+    Author_id = db.Column(db.Integer,db.ForeignKey("author.id"))
+
+
+
+#2：定义关系属性  一对多关系  作家：“一”  ------------> 文章：“多”
+ class Author(db.Model):
+     __tablename__ = "author"
+     id = db.Column(db.Integer,primary_key= True)
+     name = db.Column(db.String(20),unique= True,index=True)
+     phone = db.Column(db.String(50))
+
+
+     articles = db.relationship("Article")
+
+ #文章：“多”
+ class Article(db.Model):
+     __tablename__ = "article"
+     id = db.Column(db.Integer,primary_key = True)
+     title = db.Column(db.String(20))
+     body = db.Column(db.Text)
+     Author_id = db.Column(db.Integer,db.ForeignKey("author.id"))
+
+class Writer(db.Model):
+    __tablename__ = "writer"
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(50),unique = True)
+    books = db.relationship("Writer",back_populates = "")
+
+
+class Book(db.Model):
+    __tablename__ = "book"
+    id = db.Column(db.Integer,primary_key = True)
+    title = db.Column(db.String(20))
+    writer_id = db.Column(db.Integer,db.ForeignKey("writer.id"))
