@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+import itchat
+import datetime
+import time
+
+itchat.auto_login(hotReload=True)
+Friends_list = itchat.get_friends(update=True)[0:]
+message1 = "新春快乐，祝您身体健康，家庭美满，阖家幸福！！{}".format(datetime.datetime.now())
+for friend in Friends_list:
+    if friend["RemarkName"] == "":
+        print(friend["NickName"],"改一下吧备注吧！")
+        # itchat.send(msg = message1 , toUserName=friend["UserName"])
+        time.sleep(1)
+    else:
+        print(friend["RemarkName"])
+        command1 = input("请输入指令：1：发送该祝福短信给该好友; 2：跳过;")
+        # itchat.send(msg = "程序测试！！！" , toUserName=friend["UserName"])
